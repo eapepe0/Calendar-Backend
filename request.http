@@ -1,0 +1,6 @@
+POST http://localhost:4000/api/auth
+// /
+//POST http://localhost:4000/api/auth/new
+// registro
+//GET http://localhost:4000/api/auth/renew
+// renew
