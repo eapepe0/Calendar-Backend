@@ -11,6 +11,8 @@ const {
 	loginUsuario,
 } = require("../controllers/auth");
 const { validarCampos } = require("../middlewares/validarCampos");
+const { validarJWT } = require('../middlewares/validarJWT')
+
 
 const router = Router();
 //* recibe login y password para loguearse
@@ -47,6 +49,6 @@ router.post(
 	crearUsuario
 ); //* localhost/api/auth/new
 //
-router.get("/renew", revalidarToken); //localhost/api/auth/renew
+router.get("/renew", validarJWT, revalidarToken); //localhost/api/auth/renew
 
 module.exports = router;
