@@ -20,15 +20,19 @@ app.use(cors())
 
 //* Directorio publico
 //* (use es un middleware , es una funcion que se ejecuta cuando alguien hace una peticion al servidor)
+
 app.use(express.static("public"));
 
-//* Lectura y paseo del body
+//* Lectura y parseo del body
 //* las peticiones que lleguen en formato json , las vamos a procesar ahi y extraer su contenido
+
 app.use(express.json());
 
 //* Rutas
+
 app.use("/api/auth", require("./routes/auth"));
-// TODO CRUD : Eventos
+app.use('/api/events', require('./routes/events'));
+
 
 //* escuchar peticiones
 

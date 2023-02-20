@@ -6,16 +6,16 @@ const { Schema, model } = require('mongoose');
 const UsuarioSchema = Schema({
 	name: { //* nombre 
 		type: String, //* que es una string
-		require: true //* si o si tiene que estar
+		required: true //* si o si tiene que estar
 	},
 	email: {
 		type: String, //* que es una string
-		require: true, //* si o si tiene que estar
+		required: true, //* si o si tiene que estar
 		unique: true //* tiene que ser unico en nuestra DB
 	},
 	password: {
 		type: String, //* que es una string
-		require: true, //* si o si tiene que estar
+		required: true, //* si o si tiene que estar
 
 	}
 });
