@@ -33,6 +33,17 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use('/api/events', require('./routes/events'));
 
+//* Excepciones
+
+//* si apuntamos a alguna ruta que no esta dentro de la carpeta publica , cuando desplegamos la app nos va a tirar un error
+//* Cannot GET /auth/login
+//* por eso ponemos , si no es una solicitud ni en la carpeta publica o en auth o en events 
+//* un get a cualquier ruta , donde enviaremos el archivo index.html que se encuentra en la carpeta publica
+//* aca recreamos el path donde esta la carpeta public
+
+app.get('*', (req, res) => {
+	res.sendFile(__dirname + '/public/index.html')
+})
 
 //* escuchar peticiones
 
